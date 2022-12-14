@@ -7,7 +7,7 @@ import '@openzeppelin/contracts/access/Ownable.sol';
 import '@openzeppelin/contracts/utils/cryptography/MerkleProof.sol';
 import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
 
-contract YourNftToken is ERC721AQueryable, Ownable, ReentrancyGuard {
+contract Jubilees is ERC721AQueryable, Ownable, ReentrancyGuard {
 
   using Strings for uint256;
 
@@ -21,6 +21,7 @@ contract YourNftToken is ERC721AQueryable, Ownable, ReentrancyGuard {
   uint256 public cost;
   uint256 public maxSupply;
   uint256 public maxMintAmountPerTx;
+  uint256 private constant TOKENS_RESERVED = 300; 
 
   bool public paused = true;
   bool public whitelistMintEnabled = false;
@@ -38,6 +39,9 @@ contract YourNftToken is ERC721AQueryable, Ownable, ReentrancyGuard {
     maxSupply = _maxSupply;
     setMaxMintAmountPerTx(_maxMintAmountPerTx);
     setHiddenMetadataUri(_hiddenMetadataUri);
+    for (uint256 i = 1; i <= 300; ++i) {
+      _safeMint(msg.sender, 1);
+    }
   }
 
   modifier mintCompliance(uint256 _mintAmount) {

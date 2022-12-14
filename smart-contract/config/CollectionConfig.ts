@@ -9,25 +9,25 @@ const CollectionConfig: CollectionConfigInterface = {
   // The contract name can be updated using the following command:
   // yarn rename-contract NEW_CONTRACT_NAME
   // Please DO NOT change it manually!
-  contractName: 'YourNftToken',
-  tokenName: 'My NFT Token',
-  tokenSymbol: 'MNT',
-  hiddenMetadataUri: 'ipfs://__CID__/hidden.json',
-  maxSupply: 10000,
+  contractName: 'Jubilees',
+  tokenName: "Jubilee's Metaverse",
+  tokenSymbol: 'JUBI',
+  hiddenMetadataUri: 'ipfs://QmPCvwLDQCMEezqfjxwUutaKPDPivoXmS3CTJhMp1ZGK5P/hidden.json',
+  maxSupply: 1800,
   whitelistSale: {
     price: 0.05,
     maxMintAmountPerTx: 1,
   },
   preSale: {
-    price: 0.07,
+    price: 0.00,
     maxMintAmountPerTx: 2,
   },
   publicSale: {
-    price: 0.09,
+    price: 0.05,
     maxMintAmountPerTx: 5,
   },
-  contractAddress: null,
-  marketplaceIdentifier: 'my-nft-token',
+  contractAddress: "0x7dA35C877a90E5786c1223ad61FbfeB7B3Bb0d01",
+  marketplaceIdentifier: 'jubilees-metaverse',
   marketplaceConfig: Marketplaces.openSea,
   whitelistAddresses,
 };
